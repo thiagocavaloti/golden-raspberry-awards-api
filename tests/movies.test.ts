@@ -38,19 +38,20 @@ describe('Golden Raspberry Awards API Integration Tests', () => {
   it('PUT /api/movies/:id - should update the film', async () => {
     const res = await request(app)
       .put(`/api/movies/${createdMovieId}`)
-      .send({ title: 'Updated Movie', year: 2025, winner: "" });
+      .send({ title: 'Updated Movie', year: 2025, winner:'' });
 
     expect(res.statusCode).toEqual(200);
     expect(res.body.title).toBe('Updated Movie');
+    expect(res.body.winner).toBe('');
   });
 
   it('PATCH /api/movies/:id - should partial update a film', async () => {
     const res = await request(app)
       .patch(`/api/movies/${createdMovieId}`)
-      .send({ winner: 'no' });
+      .send({ winner: '' });
 
     expect(res.statusCode).toEqual(200);
-    expect(res.body.winner).toBe('no');
+    expect(res.body.winner).toBe('');
   });
 
   it('DELETE /api/movies/:id - should delete a film', async () => {
