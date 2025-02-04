@@ -46,10 +46,10 @@ describe('Golden Raspberry Awards API Integration Tests', () => {
   it('PATCH /api/movies/:id - should partial update a film', async () => {
     const res = await request(app)
       .patch(`/api/movies/${createdMovieId}`)
-      .send({ winner: true });
+      .send({ winner: 'yes' });
 
     expect(res.statusCode).toEqual(200);
-    expect(res.body.winner).toBe(true);
+    expect(res.body.winner).toBe('yes');
   });
 
   it('DELETE /api/movies/:id - should delete a film', async () => {
