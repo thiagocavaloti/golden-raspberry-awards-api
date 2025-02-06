@@ -47,7 +47,7 @@ export const updateMovie = async (req: Request, res: Response) => {
     winner,
   })) as any;
   if (movie?.error) return res.status(400).send({ message: movie.message });
-  return res.status(201).json(movie);
+  return res.status(200).json(movie);
 };
 
 export const patchMovie = async (req: Request, res: Response) => {
@@ -55,7 +55,7 @@ export const patchMovie = async (req: Request, res: Response) => {
   const updates = req.body;
   const movie = (await patch(parseInt(id), updates)) as any;
   if (movie?.error) return res.status(400).send({ message: movie.message });
-  return res.status(201).json(movie);
+  return res.status(200).json(movie);
 };
 
 export const deleteMovie = async (req: Request, res: Response) => {
