@@ -71,7 +71,7 @@ The API will be available at `http://localhost:3000/api/movies`
     "year": 2003,
     "studios": "Wiseau-Films",
     "producers": "Tommy Wiseau",
-    "winner": true
+    "winner": "yes"
   }
   ```
 
@@ -103,7 +103,7 @@ The API will be available at `http://localhost:3000/api/movies`
   **Request Body (JSON):**
   ```json
   {
-    "winner": true
+    "winner": "yes"
   }
   ```
 
